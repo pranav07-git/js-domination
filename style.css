@@ -1,0 +1,746 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+
+
+:root {
+    --black: #000000;
+    --background: #090909;
+
+    --white: #ffffff;
+    --text: #f5f5f5;
+
+    --grey-1: #d4d4d4;
+    --grey-2: #999999;
+    --grey-3: #666666;
+    --grey-4: #333333;
+
+    --glass: rgba(255, 255, 255, 0.055);
+    --glass-hover: rgba(255, 255, 255, 0.085);
+
+    --border: rgba(255, 255, 255, 0.10);
+    --border-hover: rgba(255, 255, 255, 0.20);
+
+    --danger: #ff5c5c;
+
+    --radius: 18px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 255, 255, 0.035),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 90%,
+            rgba(255, 255, 255, 0.025),
+            transparent 30%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+}
+
+
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 400px;
+    height: 400px;
+
+    top: -250px;
+    left: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    filter: blur(120px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    right: -150px;
+    bottom: -200px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    filter: blur(110px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+
+.app {
+    width: min(1050px, 92%);
+
+    margin: 0 auto;
+
+    padding: 65px 0;
+}
+
+
+.header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 42px;
+}
+
+.header h1 {
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: -2.2px;
+
+    color: var(--white);
+}
+
+.header p {
+    margin-top: 8px;
+
+    color: var(--grey-2);
+
+    font-size: 14px;
+
+    letter-spacing: -0.1px;
+}
+
+
+
+
+.create-btn {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border: 1px solid var(--white);
+
+    background: var(--white);
+
+    color: var(--black);
+
+    padding: 13px 20px;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.create-btn span {
+    font-size: 20px;
+
+    line-height: 12px;
+}
+
+.create-btn:hover {
+    background: #e8e8e8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 35px rgba(255, 255, 255, 0.08);
+}
+
+.create-btn:active {
+    transform: translateY(0);
+}
+
+
+
+
+.notes-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.note-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 210px;
+
+    padding: 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.075),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.note-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.5),
+            transparent
+        );
+
+    opacity: 0.6;
+}
+
+
+
+
+.note-card:hover {
+    transform: translateY(-5px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border-color: var(--border-hover);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+
+
+.noteTitle {
+    font-size: 19px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.5px;
+
+    color: var(--white);
+
+    margin-bottom: 10px;
+}
+
+
+
+.noteDescription {
+    color: var(--grey-1);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 3;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+
+.note-date {
+    display: block;
+
+    margin-top: 16px;
+
+    color: var(--grey-3);
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+
+.note-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 22px;
+}
+
+.note-actions button {
+    padding: 8px 13px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+
+
+.edit-btn {
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    background: rgba(255, 255, 255, 0.055);
+
+    color: var(--grey-1);
+}
+
+.edit-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    border-color: rgba(255, 255, 255, 0.18);
+
+    color: var(--white);
+
+    transform: translateY(-1px);
+}
+
+
+
+
+.delete-btn {
+    border: 1px solid rgba(255, 92, 92, 0.15);
+
+    background: rgba(255, 92, 92, 0.06);
+
+    color: var(--danger);
+}
+
+.delete-btn:hover {
+    background: rgba(255, 92, 92, 0.12);
+
+    border-color: rgba(255, 92, 92, 0.25);
+
+    transform: translateY(-1px);
+}
+
+
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.78);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    z-index: 100;
+}
+
+.modal.active {
+    display: flex;
+}
+
+
+.modal-content {
+    width: min(550px, 100%);
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35, 35, 35, 0.94),
+            rgba(12, 12, 12, 0.97)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.7);
+
+    backdrop-filter: blur(30px);
+
+    -webkit-backdrop-filter: blur(30px);
+
+    animation: modalIn 0.25s ease;
+}
+
+
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 28px;
+}
+
+.modal-header h2 {
+    font-size: 22px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.7px;
+
+    color: var(--white);
+}
+
+.modal-header p {
+    margin-top: 6px;
+
+    color: var(--grey-2);
+
+    font-size: 12px;
+}
+
+
+
+.close-btn {
+    width: 34px;
+
+    height: 34px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    color: var(--grey-2);
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.25s ease;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    color: var(--white);
+
+    transform: rotate(90deg);
+}
+
+
+
+.form {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.form label {
+    margin-bottom: 8px;
+
+    color: var(--grey-1);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    margin-bottom: 20px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+    color: #5f5f5f;
+}
+
+.form input:hover,
+.form textarea:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+.form input:focus,
+.form textarea:focus {
+    background: rgba(255, 255, 255, 0.065);
+
+    border-color: rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+.form textarea {
+    height: 180px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+
+.modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    margin-top: 5px;
+}
+
+.modal-actions button {
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+
+.cancel-btn {
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    background: rgba(255, 255, 255, 0.055);
+
+    color: var(--grey-1);
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.10);
+
+    border-color: rgba(255, 255, 255, 0.18);
+
+    color: var(--white);
+}
+
+
+
+
+.save-btn {
+    border: 1px solid var(--white);
+
+    background: var(--white);
+
+    color: var(--black);
+
+    box-shadow:
+        0 8px 30px rgba(255, 255, 255, 0.07);
+}
+
+.save-btn:hover {
+    background: #e8e8e8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 40px rgba(255, 255, 255, 0.10);
+}
+
+
+
+@media (max-width: 650px) {
+
+    .app {
+        width: 90%;
+
+        padding: 35px 0;
+    }
+
+    .header {
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+
+    .create-btn {
+        padding: 11px 14px;
+    }
+
+    .create-btn span {
+        font-size: 18px;
+    }
+
+    .notes-container {
+        grid-template-columns: 1fr;
+    }
+
+    .note-card {
+        min-height: 190px;
+
+        padding: 20px;
+    }
+
+    .modal-content {
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+}

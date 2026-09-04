@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="header">
+            <div>
+                <h1>My Notes</h1>
+                <p>Your thoughts, all in one place.</p>
+            </div>
+
+            <button class="create-btn" id="createNote">
+                <span>+</span>
+                New Note
+            </button>
+        </header>
+
+
+
+        <section class="notes-container">
+
+           
+        </section>
+
+<div class="modal" id="noteModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <div>
+                <h2>Create Note</h2>
+                <p>Add a new note to your collection.</p>
+            </div>
+
+            <button class="close-btn" id="closeModal">
+                &times;
+            </button>
+        </div>
+
+        <div class="form">
+
+            <label for="noteTitle">Title</label>
+            <input
+                type="text"
+                id="noteTitle"
+                placeholder="Enter note title..."
+            >
+
+            <label for="noteContent">Note</label>
+            <textarea
+                id="noteContent"
+                placeholder="Write your thoughts..."
+            ></textarea>
+
+        </div>
+
+        <div class="modal-actions">
+            <button class="cancel-btn" id="cancelNote">
+                Cancel
+            </button>
+
+            <button class="save-btn" id="saveNote">
+                Save Note
+            </button>
+        </div>
+
+    </div>
+
+</div>
+    </main>
+<script src="script.js"></script>
+</body>
+</html>
