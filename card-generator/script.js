@@ -60,6 +60,7 @@ const userManager = {
     },
     removeUser: function(index){
         this.users.splice(index, 1)
+        this.renderUi();
     }
 };
 
