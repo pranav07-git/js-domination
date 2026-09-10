@@ -63,7 +63,7 @@ musicForm.addEventListener("submit", function (event) {
     })
     popupOverlay.style.display = "none"
 
-    let words = songLyric.value.trim().split(/\s+/);
+     let words = songLyric.value.trim().split(/\s+/);
 
     if (songLyric.value.trim() === "") {
         lyrics.textContent = "";
