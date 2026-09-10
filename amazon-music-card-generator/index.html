@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lyrics Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         GENERATOR BUTTON
+    ========================= -->
+
+    <button class="generator-btn">
+        Generate Card
+    </button>
+
+
+    <!-- =========================
+         MUSIC CARD
+    ========================= -->
+
+    <div class="music-card">
+
+
+        <!-- SONG INFORMATION -->
+
+        <div class="song-info">
+
+            <img
+                class="album-art"
+                src="https://i.scdn.co/image/ab67616d0000b273b2853b0cd1b61498bb6d71df"
+                alt="Album art"
+            >
+
+
+            <div class="song-details">
+
+                <div class="song-title">
+                    METAMORPHOSIS 2 [Explicit]
+                </div>
+
+                <div class="artist">
+                    INTERWORLD
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LYRICS -->
+
+        <div class="lyrics">
+            <p>Niggas wanna learn the game, but keep talkin' shit <br><br>
+    I just want the treasure, man, I'm feelin' they ain't it</p>
+        </div>
+
+
+        <!-- AMAZON MUSIC -->
+
+        <div class="amazon">
+            <img src="logo.png" alt="amazon-music-logo">
+        </div>
+
+        
+    </div>
+
+    <button class="download-btn">
+    Download Image
+</button>
+
+    
+
+
+    <!-- =========================
+         POPUP
+    ========================= -->
+
+    <div class="popup-overlay">
+
+
+        <div class="popup">
+
+
+            <div class="popup-header">
+
+                <h2>
+                    Generate Music Card
+                </h2>
+
+
+                <label class="close-btn">
+                    ×
+                </label>
+
+            </div>
+
+
+            <!-- SONG NAME -->
+ <form id="music-form">
+            <div class="form-group">
+
+                <label for="song">
+                    Song name
+                </label>
+
+                <input
+                    required
+                    type="text"
+                    id="song"
+                    placeholder="Enter song name"
+                >
+
+            </div>
+
+
+            <!-- ARTIST -->
+
+            <div class="form-group">
+
+                <label for="artist">
+                    Artist
+                </label>
+
+                <input
+                    required
+                    type="text"
+                    id="artist"
+                    placeholder="Enter artist name"
+                >
+
+            </div>
+
+
+            <!-- ALBUM ART -->
+
+            <div class="form-group">
+
+                <label for="image">
+                    Album image URL
+                </label>
+
+                <input
+                    required
+                    type="file"
+                    id="image"
+                    accept="image/*"
+                    placeholder="Paste image URL"
+                >
+
+            </div>
+
+
+            <!-- LYRICS -->
+
+            <div class="form-group">
+
+                <label for="lyrics">
+                    Lyrics
+                </label>
+
+                <textarea
+                    required
+                    id="lyrics"
+                    placeholder="Enter the lyrics..."
+                ></textarea>
+
+            </div>
+            
+
+
+
+
+
+
+            <!-- GENERATE -->
+
+            <button class="generate-btn">
+                Generate Card
+            </button>
+</form>
+
+        </div>
+
+    </div>
+    <div class="lyrics-measurer"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
