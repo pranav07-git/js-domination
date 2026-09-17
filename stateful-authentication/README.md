@@ -1,0 +1,1 @@
+statefull authentication using mongodb with mongoose, express server, uuid in cookies storage.

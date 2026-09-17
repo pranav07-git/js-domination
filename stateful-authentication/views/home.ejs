@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: #111;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .home {
+        text-align: center;
+      }
+
+      .home h1 {
+        font-size: 48px;
+        margin-bottom: 12px;
+      }
+
+      .home p {
+        font-size: 18px;
+        color: #aaa;
+        margin-bottom: 30px;
+      }
+
+      .home button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 7px;
+        background: #fff;
+        color: #111;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .home button:hover {
+        background: #ddd;
+        transform: translateY(-2px);
+      }
+      .home button a{
+        color: #000;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home">
+      <h1>Home Page</h1>
+      <p>stateful authentication in node.js</p>
+      <button><a href="http://localhost:8000/signup">Sign Up</a></button>
+      <button><a href="http://localhost:8000/login">Login</a></button>
+    </div>
+  </body>
+</html>
