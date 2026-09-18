@@ -1,0 +1,1 @@
+stateless authentication using jwt, mongodb with mongoose, express server, jwt token in cookies storage.
